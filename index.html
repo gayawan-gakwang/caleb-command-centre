@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caleb Command Centre</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">CC</div>
+        <div>
+          <h1>Caleb Command Centre</h1>
+          <p class="tagline">Discipline • Money • Strength • Respect</p>
+        </div>
+      </div>
+      <div class="date-box">
+        <div id="current-date"></div>
+        <div id="current-time" class="time"></div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <!-- Morning Block -->
+      <section class="card">
+        <div class="card-header">
+          <h2>Morning Block</h2>
+          <span class="badge">07:10 – 07:55</span>
+        </div>
+        <div class="checklist" id="morning-checklist">
+          <label class="check-item">
+            <input type="checkbox" data-key="morning-body" />
+            <span>10 min Body (Push / Squat / Plank)</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-key="morning-money" />
+            <span>Wrote 1 Money Action</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-key="morning-skill" />
+            <span>Wrote 1 Skill Action for Night</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-key="morning-identity" />
+            <span>Wrote: “I am becoming the man my family will respect.”</span>
+          </label>
+        </div>
+        <textarea id="morning-note" class="note" placeholder="Quick morning note..."></textarea>
+      </section>
+
+      <!-- Night Block -->
+      <section class="card">
+        <div class="card-header">
+          <h2>Night Block</h2>
+          <span class="badge">21:15 – 23:30</span>
+        </div>
+        <div class="mode-select">
+          <button class="mode-btn" data-mode="A" id="mode-a">Mode A — Skill & Money</button>
+          <button class="mode-btn" data-mode="B" id="mode-b">Mode B — Body</button>
+        </div>
+        <div class="checklist" id="night-checklist">
+          <label class="check-item">
+            <input type="checkbox" data-key="night-started" />
+            <span>Started Night Block on time</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-key="night-deepwork" />
+            <span>Deep Work / Training completed</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-key="night-plan" />
+            <span>Planned tomorrow’s #1 action</span>
+          </label>
+        </div>
+        <textarea id="night-log" class="note" placeholder="What did you actually do tonight?"></textarea>
+      </section>
+
+      <!-- Money -->
+      <section class="card">
+        <div class="card-header">
+          <h2>Money Log</h2>
+          <span class="badge">Today</span>
+        </div>
+        <div class="money-grid">
+          <div class="money-field">
+            <label>Earned (₦)</label>
+            <input type="number" id="money-earned" placeholder="0" min="0" />
+          </div>
+          <div class="money-field">
+            <label>Saved (₦)</label>
+            <input type="number" id="money-saved" placeholder="0" min="0" />
+          </div>
+        </div>
+        <div class="money-total">
+          <span>Net Movement:</span>
+          <strong id="money-net">₦0</strong>
+        </div>
+        <textarea id="money-note" class="note" placeholder="Where did the money come from / go?"></textarea>
+      </section>
+
+      <!-- Body -->
+      <section class="card">
+        <div class="card-header">
+          <h2>Body</h2>
+          <span class="badge">Strength</span>
+        </div>
+        <div class="checklist" id="body-checklist">
+          <label class="check-item">
+            <input type="checkbox" data-key="body-trained" />
+            <span>Trained today</span>
+          </label>
+        </div>
+        <div class="body-inputs">
+          <input type="text" id="body-focus" placeholder="Focus (e.g. Push, Core, Full)" />
+          <input type="text" id="body-volume" placeholder="Volume / Sets (e.g. 4x15 pushups)" />
+        </div>
+        <textarea id="body-note" class="note" placeholder="How did the body feel?"></textarea>
+      </section>
+
+      <!-- Wins & Review -->
+      <section class="card full">
+        <div class="card-header">
+          <h2>Wins & Review</h2>
+        </div>
+        <textarea id="wins" class="note tall" placeholder="What went right today? What will you improve tomorrow?"></textarea>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <button id="save-btn" class="primary-btn">Save Today</button>
+      <button id="reset-btn" class="ghost-btn">Clear Today</button>
+      <div id="status" class="status"></div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
